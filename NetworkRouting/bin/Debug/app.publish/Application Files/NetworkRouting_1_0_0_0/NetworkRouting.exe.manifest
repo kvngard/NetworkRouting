@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="NetworkRouting.exe" version="1.0.0.0" publicKeyToken="0c31c94a14ef2159" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="NetworkRouting" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="NetworkRouting.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NetworkRouting.exe" size="18944">
+      <assemblyIdentity name="NetworkRouting" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>N7RPCdj+97GpyilE8dFxj7PxH+U=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+<publisherIdentity name="CN=UNICOMM\kgard91" issuerKeyHash="0b09808f21b79d53c64eda6443a8ec33810c9b84" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>FTBMgBFhq2xxxcBwXme3cXv1waM=</DigestValue></Reference></SignedInfo><SignatureValue>CGA7Fp4LzisCwrIPkkWCkTmDr0PRBkuhrn2IEg9IBG7+d+c0o3rIPimLrYQIkfb7PTrgECxZCYn2PJOTsjQfLmDeLop18IzTx444sef1mMUFHChhZsz/T2Q+bDR+awdt5tnPcbpc3wDjU7XpNnWQULVA+rXcJ1FiUxSNZCiQNqQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>sIQGbMgeYXbpwcYtZZO3i2X4l9PHVOEwpkAhP9h3LnruzpQaCJkLFxC5cDs6/8aaK6NQ2e4PGyqTDGXlpgMnJGdwYjXCThF05RznuHDVj1rj1BF+cqTJNyRxR4XFfWPDaHAywyAnyM0L2vwtXmMbcYjiJAQoMHuTJqaEPfQmCdE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="a3c1f57b71b7675e70c0c5716cab6111804c3015" Description="" Url=""><as:assemblyIdentity name="NetworkRouting.exe" version="1.0.0.0" publicKeyToken="0c31c94a14ef2159" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=UNICOMM\kgard91</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>XaP3Wi+erVY0P4uLcofzGNAyl18=</DigestValue></Reference></SignedInfo><SignatureValue>P7uEsZOUh+jnZyeHXqS+UWEA4WP16f7cGnzkP1hJoMw8WXhyGEcO8m/q7qvu5laRGIaP2Wy+5eZvAkrGrNT+WA2Phc+zW+K8ePhoyovUIGaSuWIiWINAphnc5Quz80pdgmZbdwo9g5A+V2KoeFCG0O75dTeCUCjy6NKF6Mf3ZIs=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>sIQGbMgeYXbpwcYtZZO3i2X4l9PHVOEwpkAhP9h3LnruzpQaCJkLFxC5cDs6/8aaK6NQ2e4PGyqTDGXlpgMnJGdwYjXCThF05RznuHDVj1rj1BF+cqTJNyRxR4XFfWPDaHAywyAnyM0L2vwtXmMbcYjiJAQoMHuTJqaEPfQmCdE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB1TCCAT6gAwIBAgIQWKMn7Q3J27xIw03zndNFWjANBgkqhkiG9w0BAQUFADApMScwJQYDVQQDHh4AVQBOAEkAQwBPAE0ATQBcAGsAZwBhAHIAZAA5ADEwHhcNMTUxMDE3MDEwMTQ1WhcNMTYxMDE2MDcwMTQ1WjApMScwJQYDVQQDHh4AVQBOAEkAQwBPAE0ATQBcAGsAZwBhAHIAZAA5ADEwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALCEBmzIHmF26cHGLWWTt4tl+JfTx1ThMKZAIT/Ydy567s6UGgiZCxcQuXA7Ov/GmiujUNnuDxsqkwxl5aYDJyRncGI1wk4RdOUc57hw1Y9a49QRfnKkyTckcUeFxX1jw2hwMsMgJ8jNC9r8LV5jG3GI4iQEKDB7kyamhD30JgnRAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAAMbrJi+0Dqnt80lcQ4HYf/TU8SyWn/0x1tLOr45NbMjVMHd8G0woLayx5D8fEcHpFZ0tmLYkWCREIT3r8V+85Id9gOta7+i+TzUungJScIyeZDzVuXU8209jZiydWDdvfLWCrCebr6LBqrTJZnWn6xOm0LsajCgMDHboVjL7sSA=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

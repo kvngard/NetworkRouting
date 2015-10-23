@@ -1,0 +1,7 @@
+C:\Development-Kevin\NetworkRouting\NetworkRouting\UnitTests\bin\Debug\UnitTests.dll
+C:\Development-Kevin\NetworkRouting\NetworkRouting\UnitTests\bin\Debug\UnitTests.pdb
+C:\Development-Kevin\NetworkRouting\NetworkRouting\UnitTests\obj\Debug\UnitTests.dll
+C:\Development-Kevin\NetworkRouting\NetworkRouting\UnitTests\obj\Debug\UnitTests.pdb
+C:\Development-Kevin\NetworkRouting\NetworkRouting\UnitTests\bin\Debug\NetworkRouting.exe
+C:\Development-Kevin\NetworkRouting\NetworkRouting\UnitTests\bin\Debug\NetworkRouting.pdb
+C:\Development-Kevin\NetworkRouting\NetworkRouting\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
