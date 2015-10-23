@@ -66,7 +66,7 @@ namespace NetworkRouting
             List<PointF> points = new List<PointF>();
             for (int i = 0; i < size; i++)
             {
-                points.Add(new PointF((float) (rand.NextDouble() * pictureBox.Width), (float) (rand.NextDouble() * pictureBox.Height)));
+                points.Add(new PointF((float)(rand.NextDouble() * pictureBox.Width), (float)(rand.NextDouble() * pictureBox.Height)));
             }
             return points;
         }
@@ -92,6 +92,7 @@ namespace NetworkRouting
         // Use this to generate routing tables for every node
         private void solveButton_Click(object sender, EventArgs e)
         {
+            //Main method for solving the path.
             if (startNodeIndex == -1 || stopNodeIndex == -1)
                 return;
 
@@ -104,6 +105,8 @@ namespace NetworkRouting
 
         private void drawPath(node current)
         {
+            //Method for printing the path cost and then drawing the path.
+            //Checks if the end node was unreachable.
             if (current == null)
             {
                 pathCostBox.Text = "Unreachable";
@@ -112,6 +115,7 @@ namespace NetworkRouting
             else
                 pathCostBox.Text = current.value.ToString();
 
+            //Draws the path onto the screen.
             while (current != current.prev)
             {
                 graphics.DrawLine(new Pen(Color.Black), points[current.id], points[current.prev.id]);
@@ -122,31 +126,38 @@ namespace NetworkRouting
 
         private void printDifference()
         {
-            if (allTimeBox.Text != "Uncreachable")
+            //Prints the % difference in execution times if the end node was reached.
+            if (pathCostBox.Text != "Unreachable")
             {
                 double all = Convert.ToDouble(allTimeBox.Text);
                 double one = Convert.ToDouble(oneTimeBox.Text);
-                differenceBox.Text = ( (1 - (one / all)) * 100 ).ToString();
+                differenceBox.Text = ((1 - (one / all)) * 100).ToString();
             }
         }
 
         private node solveAllPaths()
         {
+            //Find the shortest path to all nodes.
             Stopwatch timer = new Stopwatch();
             timer.Start();
 
             PriorityQueue pq = new PriorityQueue(points.Count);
-            pq.update(startNodeIndex,0.0,pq.find(startNodeIndex));
+            pq.update(startNodeIndex, 0.0, pq.find(startNodeIndex));
 
             while (pq.isNotEmpty())
             {
                 node current = pq.pop();
 
+                //Checks to see if we have started popping unreachable nodes.
                 if (current.value == double.PositiveInfinity)
                 {
+                    //If one of the unreachable nodes is the node we're looking for, return.
+                    if (current.id == stopNodeIndex)
+                        return null;
                     continue;
                 }
 
+                //Iterate over all adjacent nodes that have not been removed.
                 foreach (int id in adjacencyList[current.id].Where(x => pq.find(x).index != -1))
                 {
                     node adjacent = pq.find(id);
@@ -164,6 +175,7 @@ namespace NetworkRouting
 
         private node solveOnePath()
         {
+            //Method for finding only the shortest path between two nodes.
             Stopwatch timer = new Stopwatch();
             timer.Start();
 
@@ -176,6 +188,7 @@ namespace NetworkRouting
                 node current = pq.pop();
                 if (current.id == stopNodeIndex)
                 {
+                    //If we've reached the stopNode, we can return immediately.
                     timer.Stop();
                     oneTimeBox.Text = timer.Elapsed.TotalMilliseconds.ToString();
                     return current;
@@ -198,7 +211,8 @@ namespace NetworkRouting
 
         private double findDistance(PointF a, PointF b)
         {
-            return Math.Sqrt(Math.Pow((a.X - b.X),2) + Math.Pow((a.Y - b.Y),2));
+            //Find the euclidean distance between two points.
+            return Math.Sqrt(Math.Pow((a.X - b.X), 2) + Math.Pow((a.Y - b.Y), 2));
         }
 
         private Boolean startStopToggle = true;
@@ -253,7 +267,7 @@ namespace NetworkRouting
 
             for (int i = 0; i < points.Count; i++)
             {
-                double dist = Math.Sqrt(Math.Pow(points[i].X-mouseDownLocation.X,2) + Math.Pow(points[i].Y - mouseDownLocation.Y,2));
+                double dist = Math.Sqrt(Math.Pow(points[i].X - mouseDownLocation.X, 2) + Math.Pow(points[i].Y - mouseDownLocation.Y, 2));
                 if (dist < minDist)
                 {
                     minIndex = i;
